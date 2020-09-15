@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vqid</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <style>
+      html, body, .container, .row {
+        height: 100%;
+      }
+      body {
+        background: #FFFFFF url(tile.png) repeat 0 0;
+        overflow: hidden;
+        animation: slide 450s linear infinite;
+      }
+      .row{
+         background: rgba(36,36,36,0.82);
+         overflow: hidden;
+         height: 100%;
+         width: 200%;
+         z-index: 2;
+      } 
+      h1::after {
+        content: "|";
+        animation: blink 1s step-start infinite;
+        z-index: 1;
+      }
+      img {
+        border: 0.3rem solid #A020FF;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      @keyframes slide {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: -10000px 0;
+        }
+      }
+      #icons {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5 align-self-end align-self-sm-center text-center text-sm-right">
+          <img src="avatar.png" class="rounded-circle" style="width:200px;height:200px;" title="???">
+        </div>
+        <div class="col-sm-7 align-self-start align-self-sm-center text-center text-sm-left">
+          <h1>Vqid</h1>
+          <div class="color-overlay"></div>
+          <ul id="icons" class="list-inline">
+            <li class="list-inline-item">
+              <a href="https://discordapp.com/users/363092903867842562" target="_blank"><i class="fab fa-discord" title="Discord: Vqid#0001"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/vqid" target="_blank"><i class="fab fa-github" title="My Github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("load", function(e) {
+        var original = document.title;
+        var blink = true;
+        setInterval(function() {
+          document.title = original + (blink ? "|" : "\xa0\xa0");
+          blink = !blink;
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
